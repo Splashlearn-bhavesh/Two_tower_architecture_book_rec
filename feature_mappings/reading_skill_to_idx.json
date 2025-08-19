@@ -1,0 +1,15 @@
+{
+    "author's reasons": 0,
+    "basic factual questions": 1,
+    "cause and effect relationship": 2,
+    "chronology or sequence": 3,
+    "compare and contrast": 4,
+    "decoding vocabulary": 5,
+    "fact and opinion": 6,
+    "illustrations or other visual elements": 7,
+    "main idea & key details": 8,
+    "making inferences": 9,
+    "point of view": 10,
+    "problem and solution relationship": 11,
+    "unk": 12
+}

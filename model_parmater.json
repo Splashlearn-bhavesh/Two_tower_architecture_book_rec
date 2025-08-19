@@ -1,0 +1,40 @@
+{
+    "book_feature_count": {
+        "themes_count": 108,
+        "book_count": 12190,
+        "grade_count": 11,
+        "reading_skills_count": 13,
+        "category_count": 9
+    },
+    "emb_count": {
+        "themes_count": 8,
+        "book_count": 16,
+        "grade_count": 4,
+        "reading_skills_count": 4,
+        "category_count": 4
+    },
+    "user_feature_count": {
+        "themes_count": 108,
+        "book_count": 12190,
+        "reading_skills_count": 13,
+        "category_count": 9,
+        "country_count": 160,
+        "state_count": 558,
+        "zipcode_count": 15985,
+        "teacher_count": 112147,
+        "school_count": 84655
+    },
+    "user_emb_count": {
+        "themes_count": 8,
+        "book_count": 16,
+        "reading_skills_count": 4,
+        "category_count": 4,
+        "country_count": 8,
+        "state_count": 10,
+        "zipcode_count": 14,
+        "teacher_count": 16,
+        "school_count": 16
+    },
+    "book_feature_dim": 1163,
+    "user_feature_dim": 20
+}

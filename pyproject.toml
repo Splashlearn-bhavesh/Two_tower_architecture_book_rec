@@ -1,0 +1,11 @@
+[project]
+name = "src"
+version = "0.0.1"
+description = "B2B recommendation using TTA"
+authors = [{name = "Bhavesh Raj", email = "bhavesh.raj@splashlearn.com"}]
+
+[tool.setuptools]
+packages = {find = {}}
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}

@@ -1,0 +1,150 @@
+2025-07-29 16:18:52,510 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-07-29 16:18:52,515 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-07-29 16:19:44,880 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-07-29 16:19:44,882 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-07-29 16:30:29,281 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-07-29 16:30:29,286 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-01 18:08:12,905 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-01 18:08:12,908 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-04 11:05:46,044 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-04 11:05:46,046 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-04 12:08:03,333 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-04 12:08:03,335 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-04 14:22:12,454 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-04 14:22:12,459 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-04 17:01:52,312 - side - DEBUG - Attempting to read SQL file: sql_files/class_query.sql
+2025-08-04 17:01:52,320 - side - INFO - Successfully read SQL file: sql_files/class_query.sql
+2025-08-04 17:02:21,603 - side - DEBUG - Attempting to read SQL file: sql_files/class_query.sql
+2025-08-04 17:02:21,606 - side - INFO - Successfully read SQL file: sql_files/class_query.sql
+2025-08-04 17:58:23,898 - side - DEBUG - Attempting to read SQL file: sql_files/class_query.sql
+2025-08-04 17:58:23,906 - side - INFO - Successfully read SQL file: sql_files/class_query.sql
+2025-08-04 18:04:26,023 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-04 18:04:26,028 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-04 18:05:01,791 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-04 18:05:01,801 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-04 18:27:44,743 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-04 18:27:44,745 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-05 16:39:02,643 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-05 16:39:02,648 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-05 16:45:46,864 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-05 16:45:46,865 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-05 16:47:08,686 - side - DEBUG - Attempting to read SQL file: sql_files/class_query.sql
+2025-08-05 16:47:08,688 - side - INFO - Successfully read SQL file: sql_files/class_query.sql
+2025-08-05 16:50:12,870 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-05 16:50:12,871 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-05 16:57:50,897 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-05 16:57:50,900 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-05 17:03:16,260 - side - DEBUG - Attempting to read SQL file: sql_files/class_query.sql
+2025-08-05 17:03:16,262 - side - INFO - Successfully read SQL file: sql_files/class_query.sql
+2025-08-05 17:05:45,888 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-05 17:05:45,889 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-05 17:24:37,478 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-05 17:24:37,480 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-05 17:30:35,973 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-05 17:30:35,974 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-05 17:31:44,388 - side - DEBUG - Attempting to read SQL file: sql_files/class_query.sql
+2025-08-05 17:31:44,389 - side - INFO - Successfully read SQL file: sql_files/class_query.sql
+2025-08-06 12:12:38,691 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-06 12:12:38,696 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-07 12:52:03,484 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-07 12:52:03,488 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-07 12:52:46,319 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-07 12:52:46,321 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-07 15:47:16,115 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-07 15:47:16,127 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-07 16:18:22,145 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-07 16:18:22,147 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-07 16:21:48,937 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-07 16:21:48,940 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-07 17:45:42,136 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-07 17:45:42,139 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-07 17:47:23,289 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-07 17:47:23,292 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-07 18:56:03,842 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-07 18:56:03,851 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-07 19:18:13,114 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-07 19:18:13,118 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-08 11:30:58,919 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-08 11:30:58,924 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-08 17:02:20,612 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-08 17:02:20,620 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-08 17:25:03,990 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-08 17:25:03,992 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-08 17:30:26,377 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-08 17:30:26,378 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-08 17:32:40,815 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-08 17:32:40,817 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-09 12:55:03,196 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-09 12:55:03,198 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-09 12:55:53,060 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-09 12:55:53,062 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-10 16:37:13,162 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-10 16:37:13,166 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-10 16:54:09,432 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-10 16:54:09,434 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-12 17:45:29,531 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-12 17:45:29,533 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-12 17:49:03,810 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-12 17:49:03,813 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-12 17:53:29,524 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-12 17:53:29,526 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-12 17:54:32,842 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-12 17:54:32,843 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-12 18:30:30,070 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-12 18:30:30,072 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-13 12:45:33,320 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-13 12:45:33,323 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-13 12:58:55,444 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-13 12:58:55,445 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-13 13:01:27,729 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-13 13:01:27,730 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-13 16:39:29,611 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-13 16:39:29,614 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-13 16:42:50,919 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-13 16:42:50,922 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-13 16:57:16,570 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-13 16:57:16,571 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-13 16:59:25,600 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-13 16:59:25,601 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-13 17:30:54,231 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-13 17:30:54,233 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-13 17:34:37,044 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-13 17:34:37,047 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-13 17:47:06,910 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-13 17:47:06,911 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-13 17:49:06,068 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-13 17:49:06,069 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-13 18:22:06,544 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-13 18:22:06,546 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-13 18:33:31,211 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-13 18:33:31,215 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-13 18:46:28,738 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-13 18:46:28,739 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-13 18:48:29,671 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-13 18:48:29,672 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-14 11:57:58,833 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-14 11:57:58,835 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-14 12:00:44,934 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-14 12:00:44,936 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-14 12:16:16,180 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-14 12:16:16,181 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-14 12:18:21,801 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-14 12:18:21,802 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-18 11:28:50,161 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-18 11:28:50,166 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-18 11:29:41,482 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-18 11:29:41,484 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-18 12:22:06,384 - side - DEBUG - Attempting to read SQL file: sql_files/item_query.sql
+2025-08-18 12:22:06,386 - side - INFO - Successfully read SQL file: sql_files/item_query.sql
+2025-08-18 12:25:01,486 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-18 12:25:01,487 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-18 12:33:48,852 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-18 12:33:48,853 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-18 12:36:57,913 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-18 12:36:57,915 - side - INFO - Successfully read SQL file: sql_files/user_query.sql
+2025-08-18 17:46:22,146 - side - DEBUG - Attempting to read SQL file: sql_files/user_book_platform.sql
+2025-08-18 17:46:22,152 - side - INFO - Successfully read SQL file: sql_files/user_book_platform.sql
+2025-08-18 17:58:27,205 - side - DEBUG - Attempting to read SQL file: sql_files/user_location.sql
+2025-08-18 17:58:27,207 - side - INFO - Successfully read SQL file: sql_files/user_location.sql
+2025-08-18 18:00:04,249 - side - DEBUG - Attempting to read SQL file: sql_files/user_query.sql
+2025-08-18 18:00:04,250 - side - INFO - Successfully read SQL file: sql_files/user_query.sql

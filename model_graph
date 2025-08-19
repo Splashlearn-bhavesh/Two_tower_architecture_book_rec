@@ -1,0 +1,80 @@
+digraph {
+	graph [size="12,12"]
+	node [align=left fontname=monospace fontsize=10 height=0.2 ranksep=0.1 shape=box style=filled]
+	5129061632 [label="
+ (32, 32)" fillcolor=darkolivegreen1]
+	5106444240 [label=AddmmBackward0]
+	5121066464 -> 5106444240
+	5129071792 [label="model.8.bias
+ (32)" fillcolor=lightblue]
+	5129071792 -> 5121066464
+	5121066464 [label=AccumulateGrad]
+	5121071648 -> 5106444240
+	5121071648 [label=MulBackward0]
+	5121072176 -> 5121071648
+	5121072176 [label=ReluBackward0]
+	5121072992 -> 5121072176
+	5121072992 [label=NativeBatchNormBackward0]
+	5121068384 -> 5121072992
+	5121068384 [label=AddmmBackward0]
+	5121066128 -> 5121068384
+	5129072192 [label="model.4.bias
+ (64)" fillcolor=lightblue]
+	5129072192 -> 5121066128
+	5121066128 [label=AccumulateGrad]
+	5121067472 -> 5121068384
+	5121067472 [label=MulBackward0]
+	5121065744 -> 5121067472
+	5121065744 [label=ReluBackward0]
+	5121068096 -> 5121065744
+	5121068096 [label=NativeBatchNormBackward0]
+	5121066704 -> 5121068096
+	5121066704 [label=AddmmBackward0]
+	5121072080 -> 5121066704
+	5129072992 [label="model.0.bias
+ (128)" fillcolor=lightblue]
+	5129072992 -> 5121072080
+	5121072080 [label=AccumulateGrad]
+	5121072608 -> 5121066704
+	5121072608 [label=TBackward0]
+	5121071456 -> 5121072608
+	5129074912 [label="model.0.weight
+ (128, 64)" fillcolor=lightblue]
+	5129074912 -> 5121071456
+	5121071456 [label=AccumulateGrad]
+	5121077168 -> 5121068096
+	5129072912 [label="model.1.weight
+ (128)" fillcolor=lightblue]
+	5129072912 -> 5121077168
+	5121077168 [label=AccumulateGrad]
+	5121067280 -> 5121068096
+	5129072352 [label="model.1.bias
+ (128)" fillcolor=lightblue]
+	5129072352 -> 5121067280
+	5121067280 [label=AccumulateGrad]
+	5121066944 -> 5121068384
+	5121066944 [label=TBackward0]
+	5121070592 -> 5121066944
+	5129067232 [label="model.4.weight
+ (64, 128)" fillcolor=lightblue]
+	5129067232 -> 5121070592
+	5121070592 [label=AccumulateGrad]
+	5121069968 -> 5121072992
+	5129072512 [label="model.5.weight
+ (64)" fillcolor=lightblue]
+	5129072512 -> 5121069968
+	5121069968 [label=AccumulateGrad]
+	5121076592 -> 5121072992
+	5129072032 [label="model.5.bias
+ (64)" fillcolor=lightblue]
+	5129072032 -> 5121076592
+	5121076592 [label=AccumulateGrad]
+	5121076688 -> 5106444240
+	5121076688 [label=TBackward0]
+	5121079040 -> 5121076688
+	5129071712 [label="model.8.weight
+ (32, 64)" fillcolor=lightblue]
+	5129071712 -> 5121079040
+	5121079040 [label=AccumulateGrad]
+	5106444240 -> 5129061632
+}

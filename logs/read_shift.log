@@ -1,0 +1,267 @@
+2025-07-29 16:19:47,440 - read_shift - INFO - Connected to Redshift successfully.
+2025-07-29 16:21:54,237 - read_shift - INFO - Query executed successfully, retrieved 22703 rows.
+2025-07-29 16:21:54,239 - read_shift - INFO - Connection closed.
+2025-07-29 16:30:31,855 - read_shift - INFO - Connected to Redshift successfully.
+2025-07-29 16:31:34,065 - read_shift - INFO - Query executed successfully, retrieved 12191 rows.
+2025-07-29 16:31:34,067 - read_shift - INFO - Connection closed.
+2025-08-01 18:08:15,869 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-01 18:09:08,092 - read_shift - INFO - Query executed successfully, retrieved 12191 rows.
+2025-08-01 18:09:08,095 - read_shift - INFO - Connection closed.
+2025-08-04 11:05:49,534 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 11:11:44,567 - read_shift - INFO - Query executed successfully, retrieved 4944579 rows.
+2025-08-04 11:11:44,574 - read_shift - INFO - Connection closed.
+2025-08-04 12:08:06,355 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 12:14:36,862 - read_shift - INFO - Query executed successfully, retrieved 4944579 rows.
+2025-08-04 12:14:36,865 - read_shift - INFO - Connection closed.
+2025-08-04 14:22:16,002 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 14:23:21,385 - read_shift - INFO - Query executed successfully, retrieved 672649 rows.
+2025-08-04 14:23:21,388 - read_shift - INFO - Connection closed.
+2025-08-04 17:01:55,359 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 17:02:24,439 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 17:05:45,740 - read_shift - INFO - Query executed successfully, retrieved 675762 rows.
+2025-08-04 17:05:45,743 - read_shift - INFO - Connection closed.
+2025-08-04 17:58:27,113 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 17:59:47,493 - read_shift - INFO - Query executed successfully, retrieved 675762 rows.
+2025-08-04 17:59:47,496 - read_shift - INFO - Connection closed.
+2025-08-04 18:04:29,298 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 18:04:30,728 - read_shift - ERROR - Error executing query: Execution failed on sql 'SELECT
+    UPPER(REPLACE(uba.user_id, '-', ''))  as user_id,
+    books.isbn,
+    DATE(uba.created_at) as book_create_dt
+    brf.name as language_book,
+    client_type,
+    platform,
+    CASE 
+        WHEN (EXTRACT(HOUR FROM (
+            CASE 
+                WHEN b2b.browser_timezone IN ('us/pacific', 'us/eastern', 'us/central', 'us/mountain', 'utc',
+                'us/arizona', 'us/hawaii', 'us/samoa', 'us/alaska', 'Asia/Kolkata', 'Europe/London', 
+                'Asia/Shanghai', 'Australia/Sydney', 'Asia/Jakarta', 'Australia/Brisbane', 'Europe/Berlin', 
+                'Asia/Baghdad', 'America/Bogota', 'Pacific/Auckland', 'Africa/Johannesburg', 'Australia/Perth', 
+                'Asia/Karachi', 'Australia/Adelaide', 'Europe/Minsk', 'Europe/Helsinki', 'Africa/Cairo', 
+                'America/Argentina/Buenos_Aires', 'Japan', 'Mexico/General', 'Canada/Newfoundland', 
+                'Canada/Atlantic') 
+                THEN convert_timezone('UTC', b2b.browser_timezone, uba.created_at) 
+                ELSE uba.created_at 
+            END
+        )) NOT BETWEEN 4 AND 14) OR EXTRACT(DOW FROM uba.created_at) IN (0, 6) 
+        THEN 1 
+        ELSE 0 
+    END AS played_post_3pm,
+    row_number() over(partition by uba.user_id order by uba.created_at desc) as lasted_book_read
+FROM
+    data_warehouse.student_klass_history sfl
+JOIN exploratory_service.user_book_attempts uba
+    ON sfl.student_id = UPPER(REPLACE(uba.user_id, '-', ''))
+    AND sfl.school_year = 2025
+    AND DATE(uba.created_at) >= '2024-08-01'
+JOIN book_service.books AS books ON uba.book_code = books.isbn
+LEFT JOIN data_warehouse.dim_client AS client ON client.client_id = UPPER(REPLACE(uba.client_id, '-', '')) 
+left join book_service.book_languages brf on brf.id = books.book_language_id
+left join (select user_id,case when t.browser_timezone = 'arizona' then 'us/arizona'
+    		    when t.browser_timezone = 'hawaii' then 'us/hawaii'
+			    when t.browser_timezone = 'american samoa' then 'us/samoa'
+			    When t.browser_timezone = 'central america' then 'us/central'
+			    when t.browser_timezone = 'alaska' then 'us/alaska'
+			    when t.browser_timezone = 'edinburgh' then 'Europe/London'
+			    when t.browser_timezone = 'beijing' then 'Asia/Shangha'
+			    when t.browser_timezone = 'sydney' then 'Australia/Sydney'
+			    when t.browser_timezone = 'jakarta' then 'Asia/Jakarta'
+			    when t.browser_timezone = 'brisbane' then 'Australia/Brisbane'
+			    when t.browser_timezone = 'berlin' then 'Europe/Berlin'
+			    when t.browser_timezone = 'baghdad' then 'Asia/Baghdad'
+			    when t.browser_timezone = 'bogota' then 'America/Bogota'
+			    when t.browser_timezone = 'auckland' then 'Pacific/Auckland'
+			    when t.browser_timezone = 'pretoria' then 'Africa/Johannesburg'
+			    when t.browser_timezone = 'perth' then 'Australia/Perth'
+			    when t.browser_timezone = 'islamabad' then 'Asia/Karachi'
+			    when t.browser_timezone = 'adelaide' then 'Australia/Adelaide'
+			    when t.browser_timezone = 'minsk' then 'Europe/Minsk'
+			    when t.browser_timezone = 'helsinki' then 'Europe/Helsinki'
+			    when t.browser_timezone = 'cairo' then 'Africa/Cairo'
+			    when t.browser_timezone = 'buenos aires' then 'America/Argentina/Buenos_Aires'
+			    when t.browser_timezone = 'osaka' then 'Japan'
+			    when t.browser_timezone = 'guadalajara' then 'Mexico/General'
+			    when t.browser_timezone = 'newfoundland' then 'Canada/Newfoundland'
+			    when t.browser_timezone = 'atlantic time (canada)' then 'Canada/Atlantic'
+			    else t.browser_timezone end as browser_timezone	from data_warehouse.dim_customer t where user_type = 'teacher' )  b2b on sfl.klass_teacher_id = b2b.user_id 
+': syntax error at or near "brf" in context ") as book_create_dt
+    brf", at line 5, column 5
+LINE 5:     brf.name as language_book,
+            ^
+
+2025-08-04 18:04:30,732 - read_shift - INFO - Connection closed.
+2025-08-04 18:05:09,983 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 18:27:48,009 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-04 18:43:58,174 - read_shift - INFO - Query executed successfully, retrieved 8938147 rows.
+2025-08-04 18:43:58,178 - read_shift - INFO - Connection closed.
+2025-08-05 16:39:05,253 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 16:45:46,844 - read_shift - INFO - Query executed successfully, retrieved 4946560 rows.
+2025-08-05 16:45:46,848 - read_shift - INFO - Connection closed.
+2025-08-05 16:45:49,465 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 16:47:08,670 - read_shift - INFO - Query executed successfully, retrieved 672952 rows.
+2025-08-05 16:47:08,674 - read_shift - INFO - Connection closed.
+2025-08-05 16:47:11,172 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 16:50:12,843 - read_shift - INFO - Query executed successfully, retrieved 676065 rows.
+2025-08-05 16:50:12,847 - read_shift - INFO - Connection closed.
+2025-08-05 16:50:15,348 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 16:57:53,675 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 17:03:16,247 - read_shift - INFO - Query executed successfully, retrieved 4946560 rows.
+2025-08-05 17:03:16,251 - read_shift - INFO - Connection closed.
+2025-08-05 17:03:18,827 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 17:05:45,874 - read_shift - INFO - Query executed successfully, retrieved 676065 rows.
+2025-08-05 17:05:45,877 - read_shift - INFO - Connection closed.
+2025-08-05 17:05:48,431 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 17:24:40,524 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 17:30:35,959 - read_shift - INFO - Query executed successfully, retrieved 4946560 rows.
+2025-08-05 17:30:35,963 - read_shift - INFO - Connection closed.
+2025-08-05 17:30:39,332 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 17:31:44,376 - read_shift - INFO - Query executed successfully, retrieved 672952 rows.
+2025-08-05 17:31:44,380 - read_shift - INFO - Connection closed.
+2025-08-05 17:31:46,973 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-05 17:34:01,650 - read_shift - INFO - Query executed successfully, retrieved 676065 rows.
+2025-08-05 17:34:01,655 - read_shift - INFO - Connection closed.
+2025-08-06 12:12:41,283 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-06 12:13:54,029 - read_shift - INFO - Query executed successfully, retrieved 12191 rows.
+2025-08-06 12:13:54,032 - read_shift - INFO - Connection closed.
+2025-08-07 12:52:48,944 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 12:54:00,984 - read_shift - INFO - Query executed successfully, retrieved 12191 rows.
+2025-08-07 12:54:00,992 - read_shift - INFO - Connection closed.
+2025-08-07 15:47:18,890 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 16:17:06,047 - read_shift - INFO - Query executed successfully, retrieved 4951264 rows.
+2025-08-07 16:17:06,069 - read_shift - INFO - Connection closed.
+2025-08-07 16:18:24,910 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 16:21:42,438 - read_shift - INFO - Query executed successfully, retrieved 676802 rows.
+2025-08-07 16:21:42,443 - read_shift - INFO - Connection closed.
+2025-08-07 16:21:51,610 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 16:40:47,897 - read_shift - INFO - Query executed successfully, retrieved 8949629 rows.
+2025-08-07 16:40:47,913 - read_shift - INFO - Connection closed.
+2025-08-07 17:46:57,315 - read_shift - ERROR - Failed to connect to Redshift: connection to server at "splashlearn-redshift.cpz3xriptacj.us-east-1.redshift.amazonaws.com" (52.206.17.246), port 5439 failed: Operation timed out
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-08-07 17:46:57,335 - read_shift - ERROR - Error executing query: connection to server at "splashlearn-redshift.cpz3xriptacj.us-east-1.redshift.amazonaws.com" (52.206.17.246), port 5439 failed: Operation timed out
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-08-07 17:47:25,983 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 17:48:48,454 - read_shift - INFO - Query executed successfully, retrieved 667172 rows.
+2025-08-07 17:48:48,458 - read_shift - INFO - Connection closed.
+2025-08-07 18:56:06,848 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 19:18:15,674 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-07 19:23:03,140 - read_shift - INFO - Query executed successfully, retrieved 4951264 rows.
+2025-08-07 19:23:03,143 - read_shift - INFO - Connection closed.
+2025-08-08 11:31:01,903 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-08 11:33:08,187 - read_shift - INFO - Query executed successfully, retrieved 665834 rows.
+2025-08-08 11:33:08,189 - read_shift - INFO - Connection closed.
+2025-08-08 17:02:23,313 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-08 17:08:46,822 - read_shift - INFO - Query executed successfully, retrieved 4953951 rows.
+2025-08-08 17:08:46,826 - read_shift - INFO - Connection closed.
+2025-08-08 17:25:07,379 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-08 17:30:25,871 - read_shift - INFO - Query executed successfully, retrieved 4953951 rows.
+2025-08-08 17:30:25,875 - read_shift - INFO - Connection closed.
+2025-08-08 17:30:29,369 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-08 17:32:39,407 - read_shift - INFO - Query executed successfully, retrieved 665834 rows.
+2025-08-08 17:32:39,409 - read_shift - INFO - Connection closed.
+2025-08-08 17:32:43,913 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-08 17:45:09,288 - read_shift - INFO - Query executed successfully, retrieved 4953951 rows.
+2025-08-08 17:45:09,292 - read_shift - INFO - Connection closed.
+2025-08-09 12:55:55,599 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-09 12:57:40,890 - read_shift - INFO - Query executed successfully, retrieved 12191 rows.
+2025-08-09 12:57:40,891 - read_shift - INFO - Connection closed.
+2025-08-10 16:37:15,618 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-10 16:39:09,561 - read_shift - INFO - Query executed successfully, retrieved 12191 rows.
+2025-08-10 16:39:09,562 - read_shift - INFO - Connection closed.
+2025-08-10 16:54:12,068 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-10 16:55:38,449 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-10 16:55:38,449 - read_shift - INFO - Connection closed.
+2025-08-12 17:49:06,925 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-12 17:50:15,225 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-12 17:50:15,225 - read_shift - INFO - Connection closed.
+2025-08-12 17:53:32,451 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-12 17:54:35,682 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-12 17:56:02,632 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-12 17:56:02,633 - read_shift - INFO - Connection closed.
+2025-08-12 18:30:33,139 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-12 18:33:14,699 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-12 18:33:14,699 - read_shift - INFO - Connection closed.
+2025-08-13 12:45:35,989 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 12:58:55,441 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 12:58:55,444 - read_shift - INFO - Connection closed.
+2025-08-13 12:58:58,004 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 13:01:27,722 - read_shift - INFO - Query executed successfully, retrieved 662272 rows.
+2025-08-13 13:01:27,729 - read_shift - INFO - Connection closed.
+2025-08-13 13:01:30,472 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 13:07:14,288 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 13:07:14,292 - read_shift - INFO - Connection closed.
+2025-08-13 16:39:32,407 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 16:41:13,249 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-13 16:41:13,249 - read_shift - INFO - Connection closed.
+2025-08-13 16:42:53,716 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 16:57:16,566 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 16:57:16,569 - read_shift - INFO - Connection closed.
+2025-08-13 16:57:19,319 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 16:59:25,598 - read_shift - INFO - Query executed successfully, retrieved 662272 rows.
+2025-08-13 16:59:25,600 - read_shift - INFO - Connection closed.
+2025-08-13 16:59:28,542 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 17:04:54,524 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 17:04:54,528 - read_shift - INFO - Connection closed.
+2025-08-13 17:30:57,396 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 17:32:55,450 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-13 17:32:55,451 - read_shift - INFO - Connection closed.
+2025-08-13 17:34:40,247 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 17:47:06,907 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 17:47:06,910 - read_shift - INFO - Connection closed.
+2025-08-13 17:47:09,750 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 17:49:06,065 - read_shift - INFO - Query executed successfully, retrieved 662272 rows.
+2025-08-13 17:49:06,067 - read_shift - INFO - Connection closed.
+2025-08-13 17:49:08,753 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 17:54:42,756 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 17:54:42,760 - read_shift - INFO - Connection closed.
+2025-08-13 18:22:09,340 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 18:23:38,570 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-13 18:23:38,570 - read_shift - INFO - Connection closed.
+2025-08-13 18:33:34,123 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 18:46:28,694 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 18:46:28,697 - read_shift - INFO - Connection closed.
+2025-08-13 18:46:31,531 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 18:48:29,669 - read_shift - INFO - Query executed successfully, retrieved 662272 rows.
+2025-08-13 18:48:29,671 - read_shift - INFO - Connection closed.
+2025-08-13 18:48:32,362 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-13 18:54:04,623 - read_shift - INFO - Query executed successfully, retrieved 4963473 rows.
+2025-08-13 18:54:04,627 - read_shift - INFO - Connection closed.
+2025-08-14 11:58:01,337 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-14 11:58:59,725 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-14 11:58:59,726 - read_shift - INFO - Connection closed.
+2025-08-14 12:00:47,486 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-14 12:16:16,176 - read_shift - INFO - Query executed successfully, retrieved 4966267 rows.
+2025-08-14 12:16:16,180 - read_shift - INFO - Connection closed.
+2025-08-14 12:16:19,037 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-14 12:18:21,799 - read_shift - INFO - Query executed successfully, retrieved 661060 rows.
+2025-08-14 12:18:21,800 - read_shift - INFO - Connection closed.
+2025-08-14 12:18:24,682 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-14 12:24:21,433 - read_shift - INFO - Query executed successfully, retrieved 4966267 rows.
+2025-08-14 12:24:21,437 - read_shift - INFO - Connection closed.
+2025-08-18 11:28:52,690 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 11:29:44,013 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 11:31:16,483 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-18 11:31:16,484 - read_shift - INFO - Connection closed.
+2025-08-18 12:22:09,190 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 12:23:16,082 - read_shift - INFO - Query executed successfully, retrieved 12189 rows.
+2025-08-18 12:23:16,083 - read_shift - INFO - Connection closed.
+2025-08-18 12:25:04,398 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 12:33:48,845 - read_shift - INFO - Query executed successfully, retrieved 4973201 rows.
+2025-08-18 12:33:48,851 - read_shift - INFO - Connection closed.
+2025-08-18 12:33:51,399 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 12:36:57,909 - read_shift - INFO - Query executed successfully, retrieved 658152 rows.
+2025-08-18 12:36:57,912 - read_shift - INFO - Connection closed.
+2025-08-18 12:37:00,411 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 12:41:56,901 - read_shift - INFO - Query executed successfully, retrieved 4973201 rows.
+2025-08-18 12:41:56,904 - read_shift - INFO - Connection closed.
+2025-08-18 17:46:24,706 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 17:58:27,200 - read_shift - INFO - Query executed successfully, retrieved 4973201 rows.
+2025-08-18 17:58:27,204 - read_shift - INFO - Connection closed.
+2025-08-18 17:58:30,104 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 18:00:04,246 - read_shift - INFO - Query executed successfully, retrieved 658152 rows.
+2025-08-18 18:00:04,248 - read_shift - INFO - Connection closed.
+2025-08-18 18:00:07,077 - read_shift - INFO - Connected to Redshift successfully.
+2025-08-18 18:03:36,382 - read_shift - INFO - Query executed successfully, retrieved 4973201 rows.
+2025-08-18 18:03:36,386 - read_shift - INFO - Connection closed.
