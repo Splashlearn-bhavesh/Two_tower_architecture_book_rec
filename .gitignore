@@ -8,3 +8,7 @@ user_platform_data.csv
 val.csv
 book_data.csv
 .env
+final_book_level_data.csv
+checkpoints
+logs
+runs
